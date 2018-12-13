@@ -1,0 +1,86 @@
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Pop3Client.aspx.cs" Inherits="Pop3Client" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+     <style type="text/css">
+		.emails-table { width: 600px; border: solid 1px #444444; }
+		.emails-table-header { font-family: "Trebuchet MS"; font-size: 9pt;
+			background-color: #0099B9; color: white;
+			border: solid 1px #444444; }
+		.emails-table-header-cell { font-family: "Georgia"; font-size: 9pt;
+			font-weight: bold; border: solid 1px #666666; padding: 6px; }
+		.emails-table-cell { font-family: "Georgia"; font-size: 9pt;
+			border: solid 1px #666666; padding: 6px; }
+		.emails-table-footer { border: solid 1px #666666; padding: 3px;
+			width: 50%; }
+		.email-datetime { float: right; color: #666666; }
+		
+		a { font-family: "Lucida Sans Unicode", "Trebuchet MS"; font-size: 9pt;
+			color: #005B7F; }
+		a:hover { color:red; }
+    </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div>
+        <asp:GridView ID="gridEmail" runat="server" AutoGenerateColumns="False" 
+           
+            onpageindexchanging="gridEmail_PageIndexChanging" PageSize="6" 
+            BorderColor="Black" BorderWidth="2px">
+            <Columns>
+                <asp:TemplateField HeaderText="Sr.NO">
+                    <EditItemTemplate>
+                        <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+                    </EditItemTemplate>
+                    <ItemTemplate>
+                        <asp:Label ID="Label1" runat="server" Text='<%# bind("SrNO") %>' ></asp:Label>
+                    </ItemTemplate>
+                    <HeaderStyle BackColor="#0099B9" ForeColor="White"  Font-Bold="true" />
+                </asp:TemplateField>
+                <asp:TemplateField HeaderText="From">
+                    <EditItemTemplate>
+                        <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>
+                    </EditItemTemplate>
+                    <ItemTemplate>
+                        <asp:Label ID="Label2" runat="server" Text='<%# bind("From") %>'></asp:Label>
+                    </ItemTemplate>
+                      <HeaderStyle BackColor="#0099B9" ForeColor="White"  Font-Bold="true"/>
+                </asp:TemplateField>
+                <asp:TemplateField HeaderText="Subject">
+                    <EditItemTemplate>
+                        <asp:TextBox ID="TextBox3" runat="server"></asp:TextBox>
+                    </EditItemTemplate>
+                    <ItemTemplate>
+                        <asp:Label ID="Label3" runat="server" Text='<%# bind("Subject") %>'></asp:Label>
+                    </ItemTemplate>
+                      <HeaderStyle BackColor="#0099B9"  ForeColor="White"  Font-Bold="true" />
+                </asp:TemplateField>
+                <asp:TemplateField HeaderText="Body">
+                    <EditItemTemplate>
+                        <asp:TextBox ID="TextBox4" runat="server"></asp:TextBox>
+                    </EditItemTemplate>
+                    <ItemTemplate>
+                        <asp:Label ID="Label4" runat="server" Text='<%# bind("Body") %>' Width="800px" ></asp:Label>
+                    </ItemTemplate>
+                      <HeaderStyle BackColor="#0099B9"  ForeColor="White"  Font-Bold="true" />
+                </asp:TemplateField>
+                <asp:TemplateField HeaderText="Date &amp; Time">
+                    <EditItemTemplate>
+                        <asp:TextBox ID="TextBox5" runat="server"></asp:TextBox>
+                    </EditItemTemplate>
+                    <ItemTemplate>
+                        <asp:Label ID="Label5" runat="server" Text='<%# bind("Date") %>'></asp:Label>
+                    </ItemTemplate>
+                      <HeaderStyle BackColor="#0099B9" ForeColor="White"  Font-Bold="true"  />
+                </asp:TemplateField>
+            </Columns>
+
+            <PagerSettings FirstPageText="First" LastPageText="Last" 
+                Mode="NextPreviousFirstLast" PageButtonCount="1" />
+
+        </asp:GridView>
+ 
+ </div></form></body></html>

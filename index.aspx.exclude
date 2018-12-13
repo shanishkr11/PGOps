@@ -1,0 +1,89 @@
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="index.aspx.cs" Inherits="index" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <style type="text/css">
+        .style1
+        {
+            width: 486px;
+        }
+        .style2
+        {
+            height: 33px;
+        }
+    </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+   <div>
+<table class="style1" 
+           
+           style="border: 1px solid #000000; background-color: #f8f8f8; font-family: Verdana; font-size: x-large; color: #000000; height: 461px;">
+<tr>
+<td colspan="3"></td></tr>
+
+<tr>
+<td colspan="3" style="text-align:left;">
+Sign In
+</td>
+</tr>
+
+<tr>
+<td colspan="3"></td></tr>
+<tr>
+<td colspan="3">
+Username
+</td>
+</tr>
+<tr>
+
+<td colspan="2">
+<asp:TextBox ID="txt_email" runat="server" Width="241px">
+</asp:TextBox>
+</td>
+<td >
+<asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server"
+ControlToValidate="txt_email" ErrorMessage="Invalid Mail Format"
+ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*">
+</asp:RegularExpressionValidator>
+</td>
+</tr>
+<tr>
+<td colspan="3"></td></tr>
+
+<tr>
+<td colspan="3">
+Password
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<asp:TextBox ID="txt_password" runat="server" TextMode="Password" Width="239px">
+</asp:TextBox>
+</td>
+<td class="style1">
+<asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server"
+ControlToValidate="txt_password" ErrorMessage="*"></asp:RequiredFieldValidator>
+</td>
+</tr>
+<tr>
+<td colspan="3"></td></tr>
+
+<tr>                  <td colspan="3" style="text-align: left">
+<asp:Button ID="Button1" runat="server" CausesValidation="False"
+onclick="Button1_Click" style="text-align: center" Text="Sign In" Width="99px" 
+        Height="38px" />
+</td>
+</tr>
+<tr>
+<td colspan="3" class="style2"></td></tr>
+
+
+</table>
+</div>
+    </form>
+</body>
+</html>
